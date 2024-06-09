@@ -89,6 +89,11 @@ def analyze_sentiment(text):
     sentiment_score = blob.sentiment.polarity
     return sentiment_score
 
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 @app.route('/upload', methods=['POST'])
 def upload_file():
     file = request.files['file']
@@ -107,22 +112,6 @@ def upload_file():
         sentiment_scores.append(sentiment_score)
     
     return render_template('result.html', chunks=chunks, summaries=summaries, sentiment_scores=sentiment_scores)
-
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-# @app.route('/upload', methods=['POST'])
-# def upload_file():
-#     file = request.files['file']
-#     file_type = request.form['file_type']
-#     chunk_size = int(request.form['chunk_size'])
-    
-#     embeddings, chunks = process_document(file, file_type, chunk_size)
-#     save_embeddings(embeddings)
-    
-#     return render_template('result.html', embeddings=embeddings, chunks=chunks, zip=zip)
 
 @app.route('/view_database')
 def view_database():
