@@ -1,0 +1,39 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+</head>
+<body>
+    <h1>Results</h1>
+    <ul>
+        {% for chunk in chunks %}
+            <li>{{ chunk }}</li>
+        {% endfor %}
+    </ul>
+    <p><a href="/">Upload Another Document</a></p>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+</head>
+<body>
+    <h1>Results</h1>
+    <table>
+        <tr>
+            <th>Chunk</th>
+            <th>Summary</th>
+            <th>Sentiment Score</th>
+        </tr>
+        {% for index in range(chunks|length) %}
+        <tr>
+            <td>{{ chunks[index] }}</td>
+            <td>{{ summaries[index] }}</td>
+            <td>{{ sentiment_scores[index] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><a href="/">Upload Another Document</a></p>
+</body>
+</html>

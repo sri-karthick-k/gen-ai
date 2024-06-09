@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Database</title>
+</head>
+<body>
+    <h1>Database Contents</h1>
+    <table>
+        <tr>
+            <th>Index</th>
+            <th>Embedding</th>
+            <th>Chunk</th>
+        </tr>
+        {% for i in range(embeddings|length) %}
+        <tr>
+            <td>{{ i }}</td>
+            <td>{{ embeddings[i] }}</td>
+            <td>{{ chunks[i] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

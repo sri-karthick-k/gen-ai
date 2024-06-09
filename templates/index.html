@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Document</title>
+</head>
+<body>
+    <h1>Upload Document</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Choose a file:</label><br>
+        <input type="file" id="file" name="file"><br>
+        <label for="file_type">File type:</label><br>
+        <select id="file_type" name="file_type">
+            <option value="text">Text</option>
+            <option value="pdf">PDF</option>
+            <option value="word">Word</option>
+        </select><br>
+        <label for="chunk_size">Chunk size:</label><br>
+        <input type="number" id="chunk_size" name="chunk_size" value="100"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <a href="/view_database">View Database</a>
+</body>
+</html>
